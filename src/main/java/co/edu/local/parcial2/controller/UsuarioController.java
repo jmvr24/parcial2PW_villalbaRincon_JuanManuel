@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import co.edu.local.parcial2.dto.UsuarioDTO;
+import co.edu.local.parcial2.model.Usuarios;
 import co.edu.local.parcial2.services.UsuarioService;
 
 @Controller
@@ -33,8 +34,8 @@ public class UsuarioController {
 	
 	@GetMapping("/registro")
 	public String mostrarRegistro(Model model) {
-		model.addAttribute("usuario", new UsuarioDTO());
-		return "registro";
+	    model.addAttribute("usuario", new Usuarios());
+	    return "registro";
 	}
 	
 	@PostMapping("/registro")

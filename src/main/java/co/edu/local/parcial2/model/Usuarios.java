@@ -15,11 +15,15 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "user_nombre"))
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuarios {
 	
 	@Id
@@ -37,8 +41,8 @@ public class Usuarios {
 	@Nonnull
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(	name = "usuarios_roles",
-				joinColumns = @JoinColumn(name = "usuario_id",referencedColumnName = "id"),
-				inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id")
+				joinColumns = @JoinColumn(name = "usuario_id",referencedColumnName = "userId"),
+				inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "rolId")
 			)
 	private Collection<Rol> rol;
 	

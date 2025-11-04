@@ -3,12 +3,15 @@ package co.edu.local.parcial2.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import co.edu.local.parcial2.dto.AsignaturaDTO;
 import co.edu.local.parcial2.model.Asignatura;
 import co.edu.local.parcial2.model.Usuarios;
 import co.edu.local.parcial2.repository.AsignaturaRepository;
 import co.edu.local.parcial2.repository.UsuarioRepository;
 
+@Service
 public class AsignaturaServiceImpl implements AsignaturaService {
 
 	@Autowired

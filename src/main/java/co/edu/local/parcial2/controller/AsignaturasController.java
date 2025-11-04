@@ -65,7 +65,7 @@ public class AsignaturasController {
 		modelo.addAttribute("asignatura", new AsignaturaDTO());
 		modelo.addAttribute("asignaturas", asignaturaService.listarAsignaturas());
 		modelo.addAttribute("docentes", usuarioService.listarDocentes());
-		return "actualizarVehiculo";
+		return "actualizarAsignatura";
 	}
 	
 	@PostMapping("/asignaturas/modificar")
